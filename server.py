@@ -31,7 +31,7 @@ from pathlib import Path
 
 BASEURL = "http://127.0.0.1:8080"
 class MyWebServer(socketserver.BaseRequestHandler):
-    
+    #https://emalsha.wordpress.com/2016/11/24/how-create-http-server-using-python-socket-part-ii/
     def handle(self):
         self.data = self.request.recv(1024).strip()
         #print ("Got a request of: %s\n" % self.data)
