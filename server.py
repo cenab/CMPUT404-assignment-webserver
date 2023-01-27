@@ -73,7 +73,6 @@ class MyWebServer(socketserver.BaseRequestHandler):
             final_response += response
             self.request.sendall(final_response)
         elif os.path.isfile(myfile):
-            print("is png here?")
             try:
                 #file = open(myfile,'rb') # open file , r => read , b => byte format
                 file_path = Path(myfile)
@@ -87,7 +86,6 @@ class MyWebServer(socketserver.BaseRequestHandler):
                 else:
                     mimetype = 'html'
                 
-                print(mimetype)
 
                 response = 'HTTP/1.1 ' + "200 OK" + '\r\nContent-Type: text/'
                 if mimetype == 'png':
